@@ -41,5 +41,11 @@ public @interface EnableCacheManager {
      */
     boolean asyn() default false;
 
+    /**
+     * 代理 class，默认为动态代理，
+     * 为 true 需要引入 aspectJ 包
+     * 目前框架不支持
+     * @return
+     */
     boolean proxyTargetClass() default false;
 }

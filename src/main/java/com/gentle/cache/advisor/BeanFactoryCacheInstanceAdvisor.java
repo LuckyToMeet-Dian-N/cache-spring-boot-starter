@@ -8,7 +8,7 @@ import org.springframework.aop.support.AbstractBeanFactoryPointcutAdvisor;
  * @author Gentle
  * @date 2020/04/08 : 23:59
  */
-public class BeanFactoryCacheInstacneAdvisor extends AbstractBeanFactoryPointcutAdvisor {
+public class BeanFactoryCacheInstanceAdvisor extends AbstractBeanFactoryPointcutAdvisor {
 
     private CacheChooseSourcePointcut pointcut = new CacheChooseSourcePointcut();
 

@@ -17,7 +17,9 @@ public class CacheConfigurationSelector  extends AdviceModeImportSelector<Enable
 
     private String[] getProxyImports() {
         List<String> result = new ArrayList<>(3);
+        //自动代理注册，Spring 已经提供
         result.add(AutoProxyRegistrar.class.getName());
+        //框架核心配置类
         result.add(ProxyCacheConfiguration.class.getName());
         return StringUtils.toStringArray(result);
     }
@@ -25,10 +27,12 @@ public class CacheConfigurationSelector  extends AdviceModeImportSelector<Enable
 
     @Override
     protected String[] selectImports(AdviceMode adviceMode) {
-
+       //默认模式是动态代理，目前不支持 ASPECTJ
         switch (adviceMode) {
             case PROXY:
                 return getProxyImports();
+            case ASPECTJ:
+                return null;
             default:
                 return null;
         }
